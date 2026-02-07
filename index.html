@@ -3,23 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moeda Tracker | Renan Califani</title>
+    <title>Moeda Tracker Pro</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Dashboard de Moedas</h1>
-        <p class="subtitle">Cotações em tempo real | Renan Califani</p>
-        
-        <div class="cards-container" id="cards">
-            <p>Carregando cotações...</p>
+
+    <div id="auth-screen" class="container">
+        <h1>Bem-vindo</h1>
+        <div class="auth-box">
+            <input type="email" id="email" placeholder="Seu e-mail">
+            <input type="password" id="password" placeholder="Sua senha">
+            <div class="auth-buttons">
+                <button onclick="login()">Entrar</button>
+                <button onclick="register()" class="secondary">Registrar</button>
+            </div>
         </div>
-        
-        <button id="refresh">
-            <i class="fas fa-sync-alt"></i> Atualizar Cotações
-        </button>
     </div>
+
+    <div id="dashboard-screen" class="container" style="display: none;">
+        <header>
+            <span id="user-info"></span>
+            <button onclick="logout()">Sair</button>
+        </header>
+
+        <h1>Cotações Globais</h1>
+        
+        <input type="text" id="search" placeholder="Procurar moeda (ex: USD, Euro, Bitcoin...)" onkeyup="filtrarMoedas()">
+
+        <div class="cards-container" id="cards">
+            </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
