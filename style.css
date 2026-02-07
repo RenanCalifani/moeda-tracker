@@ -1,0 +1,90 @@
+/* =========================================
+   1. Configurações Globais (Reset e Base)
+   ========================================= */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    min-height: 100vh;
+}
+
+/* =========================================
+   2. Layout Principal (Container)
+   ========================================= */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: #222;
+}
+
+/* =========================================
+   3. Dashboard de Cards (Flexbox)
+   ========================================= */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Faz o card pular de linha se a tela for pequena */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+/* Efeitozinho de hover para profissionalizar */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #444;
+    font-size: 1.2rem;
+}
+
+.card p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* =========================================
+   4. Botão de Ação
+   ========================================= */
+#refresh {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #0070f3; /* Cor Vercel/Moderno */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#refresh:hover {
+    background-color: #0051b3;
+}
