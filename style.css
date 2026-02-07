@@ -1,90 +1,98 @@
-/* =========================================
-   1. Configurações Globais (Reset e Base)
-   ========================================= */
-   * {
+/* 1. Reset básico e Fontes Modernas */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #f0f2f5;
     color: #333;
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    padding: 50px 20px;
     min-height: 100vh;
 }
 
-/* =========================================
-   2. Layout Principal (Container)
-   ========================================= */
 .container {
     text-align: center;
-    width: 90%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 1000px;
 }
 
 h1 {
-    margin-bottom: 10px;
     font-size: 2.5rem;
-    color: #222;
+    margin-bottom: 10px;
+    color: #1a1a1a;
 }
 
-/* =========================================
-   3. Dashboard de Cards (Flexbox)
-   ========================================= */
+.subtitle {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* 2. Cards Modernos com Flexbox */
 .cards-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Faz o card pular de linha se a tela for pequena */
+    gap: 30px;
+    flex-wrap: wrap;
     margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 .card {
     background: white;
-    padding: 25px;
-    border-radius: 12px;
-    width: 220px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
+    padding: 30px;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    text-align: left;
 }
 
-/* Efeitozinho de hover para profissionalizar */
+/* Animação ao passar o mouse */
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .card h3 {
-    margin-bottom: 15px;
-    color: #444;
     font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #0070f3; /* Cor tech */
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .card p {
-    margin-bottom: 8px;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+    margin: 5px 0;
     color: #555;
 }
 
-/* =========================================
-   4. Botão de Ação
-   ========================================= */
-#refresh {
+.price {
+    font-weight: bold;
+    color: #1a1a1a;
+    font-size: 1.3rem;
+}
+
+/* 3. Botão Moderno */
+button {
+    margin-top: 50px;
     padding: 12px 25px;
     font-size: 1rem;
-    font-weight: bold;
-    background-color: #0070f3; /* Cor Vercel/Moderno */
+    font-weight: 600;
+    background-color: #0070f3;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-#refresh:hover {
+button:hover {
     background-color: #0051b3;
 }
