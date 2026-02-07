@@ -70,3 +70,15 @@ const firebaseConfig = {
           </div>
       `).join('');
   }
+
+  // --- LÓGICA DE LOGOUT ---
+function logout() {
+    firebase.auth().signOut()
+        .then(() => {
+            // Opcional: Você pode colocar um console.log ou alerta aqui
+            console.log("Usuário deslogado com sucesso");
+        })
+        .catch(err => {
+            alert("Erro ao sair: " + err.message);
+        });
+}
